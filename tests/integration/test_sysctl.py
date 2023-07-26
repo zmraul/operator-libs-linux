@@ -36,7 +36,6 @@ def test_multiple_configure():
         "net.ipv4.tcp_max_syn_backlog = 4096\nnet.ipv4.tcp_window_scaling = 2\n" in result.decode()
     )
     assert test_file_2.exists()
-
     with open(merged_file, "r") as f:
         result = f.read()
         assert "# test1\nnet.ipv4.tcp_max_syn_backlog=4096" in result
